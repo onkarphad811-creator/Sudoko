@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 25.2.3.2 (Linux)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="00:00:00"/>
+	<style type="text/css">
+		@page { size: 8.27in 11.69in; margin: 0.79in }
+		p { margin-bottom: 0.1in; line-height: 115%; background: transparent }
+		pre { font-size: 10pt; font-family: "Liberation Mono", monospace; background: transparent }
+	</style>
+</head>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot; /&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
+&lt;title&gt;Stylish Sudoku&lt;/title&gt;
+&lt;style&gt;
+  /* Background with a subtle pattern */
+  body {
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  /* Title with creative fonts */
+  h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 3rem;
+    color: #34495e;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px #bbb;
+  }
+  /* Sudoku container styling */
+  .sudoku-container {
+    background: url('https://www.transparenttextures.com/patterns/cubes.png'); /* subtle geometric background */
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  /* Sudoku grid */
+  table {
+    border-collapse: collapse;
+    margin: auto;
+  }
+  /* Cells style */
+  td {
+    border: 2px solid #5d6d7e;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.25rem;
+    font-family: 'Courier New', Courier, monospace;
+    position: relative;
+    background-color: #e8f0fe;
+  }
+  /* Thicker borders to separate 3x3 blocks */
+  td:nth-child(3), td:nth-child(6) {
+    border-right: 4px solid #34495e;
+  }
+  tr:nth-child(3) td, tr:nth-child(6) td {
+    border-bottom: 4px solid #34495e;
+  }
+  /* Input fields styled to be very small */
+  input {
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+    text-align: center;
+    border: 1px solid #5d6d7e;
+    border-radius: 5px;
+    background-color: transparent;
+    font-family: 'Georgia', serif;
+  }
+  /* Highlight user answers in green */
+  input.user-answer {
+    color: green;
+    font-weight: bold;
+  }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div&gt;
+    &lt;h1&gt;Sudoku Challenge&lt;/h1&gt;
+    &lt;div class=&quot;sudoku-container&quot;&gt;
+      &lt;table&gt;
+        &lt;tbody&gt;
+          &lt;!-- Create 9 rows for Sudoku --&gt;
+          &lt;!-- Each cell contains an input for answers --&gt;
+          &lt;!-- Example: preset numbers can be static text, others inputs --&gt;
+          &lt;!-- For demo: some preset and some inputs to enter --&gt;
+          &lt;tr&gt;
+            &lt;td&gt;5&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; class=&quot;user-answer&quot; /&gt;&lt;/td&gt; &lt;td&gt;7&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; /&gt;&lt;/td&gt; &lt;td&gt;2&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; class=&quot;user-answer&quot; /&gt;&lt;/td&gt; &lt;td&gt;9&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; /&gt;&lt;/td&gt; &lt;td&gt;1&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; /&gt;&lt;/td&gt; &lt;td&gt;9&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; /&gt;&lt;/td&gt; &lt;td&gt;7&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; class=&quot;user-answer&quot; /&gt;&lt;/td&gt; &lt;td&gt;8&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; /&gt;&lt;/td&gt; &lt;td&gt;5&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; /&gt;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;8&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; /&gt;&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; /&gt;&lt;/td&gt; &lt;td&gt;4&lt;/td&gt; &lt;td&gt;3&lt;/td&gt; &lt;td&gt;1&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; /&gt;&lt;/td&gt; &lt;td&gt;7&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; /&gt;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; /&gt;&lt;/td&gt; &lt;td&gt;7&lt;/td&gt; &lt;td&gt;5&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; /&gt;&lt;/td&gt; &lt;td&gt;6&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; /&gt;&lt;/td&gt; &lt;td&gt;8&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; /&gt;&lt;/td&gt; &lt;td&gt;4&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;3&lt;/td&gt; &lt;td&gt;1&lt;/td&gt; &lt;td&gt;9&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; /&gt;&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; /&gt;&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; /&gt;&lt;/td&gt; &lt;td&gt;7&lt;/td&gt; &lt;td&gt;6&lt;/td&gt; &lt;td&gt;5&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; /&gt;&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; /&gt;&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; /&gt;&lt;/td&gt; &lt;td&gt;1&lt;/td&gt; &lt;td&gt;9&lt;/td&gt; &lt;td&gt;7&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; /&gt;&lt;/td&gt; &lt;td&gt;2&lt;/td&gt; &lt;td&gt;3&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;1&lt;/td&gt; &lt;td&gt;6&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; /&gt;&lt;/td&gt; &lt;td&gt;9&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; /&gt;&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; /&gt;&lt;/td&gt; &lt;td&gt;5&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; /&gt;&lt;/td&gt; &lt;td&gt;7&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; /&gt;&lt;/td&gt; &lt;td&gt;2&lt;/td&gt; &lt;td&gt;4&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; /&gt;&lt;/td&gt; &lt;td&gt;7&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; /&gt;&lt;/td&gt; &lt;td&gt;1&lt;/td&gt; &lt;td&gt;9&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; /&gt;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;7&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; /&gt;&lt;/td&gt; &lt;td&gt;3&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; /&gt;&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; /&gt;&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; /&gt;&lt;/td&gt; &lt;td&gt;6&lt;/td&gt; &lt;td&gt;&lt;input type=&quot;text&quot; maxlength=&quot;1&quot; /&gt;&lt;/td&gt; &lt;td&gt;8&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+</body>
+</html>
